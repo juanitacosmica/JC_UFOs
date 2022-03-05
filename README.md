@@ -1,51 +1,66 @@
-# JC_Mission_To_Mars
-Module 10: Web Scraping with HTMLCSS!
+# JC_UFOs
+Module 11: UFO Sightings with JavaScript
 
 # Overview of the analysis:
 
-Robin's web app is showing some cool stuff about Mars facts and data, and she wants to take this to the next level by adding images of the Mars’ hemispheres. To do this, we used BeautifulSoup and Splinter to scrape full-resolution images of Mars’ hemispheres and the titles of those images, stored the scraped data on a Mongo db, used a web app to display the data, and tailored the design of the web app to shuffle these images.
+This UFO Sightings webpage intends to show through a dynamic table an in-depth analysis of UFO sightings by allowing users to filter for multiple criteria at the same time: date, city, state, country, and shape.
 
-3 parts are accomplished through this analysis:
+1 part is accomplished through this analysis:
 
-- D1: Scrape Full-Resolution Mars Hemisphere Images and Titles
-- D2: Update the Web App with Mars Hemisphere Images and Titles
-- D3: Add Bootstrap Components
+- D1: Filter UFO sightings on multiple criteria
 
 # Resources:
  
- **Data source** All data used and queries used in this analysis are available in the [Repo Folder](https://github.com/juanitacosmica/JC_Mission-to-Mars) and all sample images of the results are in the [Resources Folder](https://github.com/juanitacosmica/JC_Mission-to-Mars/Resources) plus we also have the [html] in the [templates folder](https://github.com/juanitacosmica/JC_Mission-to-Mars/templates)
+ **Data source** All data used and queries used in this analysis are available in the [Static Folder](https://github.com/juanitacosmica/JC_UFOs/static)
 
-  **Software** Jupyter Notebook, VSCode, MongoDB, Flask, Chrome, HTML, CSS, Bootstrap3, Python, BeautifulSoup, Splinter.
+  **Software** JavaScript, HTML, CSS, Bootstrap3.
 
 
 # Results:
 
-The web scraping from active Mars' websites allowed this analysis to retrieve information about Mars facts and data from different articles, see images and their titles, and collect images of the Mars Hemispheres. The data once scrapped, is put together in a web app to show the results.
+We are showcasing a table with the data fetched from the [data.js](https://github.com/juanitacosmica/JC_UFOs/static/js) once the user filters for:
 
-- D1: Scrape Full-Resolution Mars Hemisphere Images and Titles
+- Date
+- City
+- State
+- Country
+- Shape
 
-From the script called [Mission_to_Mars_Challenge.ipynb](https://github.com/juanitacosmica/JC_Mission-to-Mars) we can appreciate how by using a for loop we were able to scrap and retrieve the image urls and titles for each hemisphere and print the list from the dictionary of them.
+As shown in the image below, we also give the user an example on what format to use when entering the data to filter for:
 
-![Script](/Resources/D1_img1.png)
+![Filters](/Resources/D1_img1.png)
 
-![Results](/Resources/D1_img2.png)
+After the user inputs the parameters, the table will show the data accordingly:
 
-- D2: Update the Web App with Mars Hemisphere Images and Titles
+![Fetched Data](/Resources/D1_img2.png)
 
-![Function defined for Hemispheres (x4)](/Resources/D2_img1.png)
+When we want to filter for different data, the user can either delete and re-enter whatever parmeters, or refresh the webpage, or click on the top left corner on "UFO Sightings" and the filters will be cleared out and ready for another use!
 
-![Img and Titles Results Hemispheres (x4)](/Resources/D2_img2.png)
+![Clear Filters Hack](/Resources/D1_img3.png)
 
-- D3: Add Bootstrap Components
+To make all this possible, we updated the code in the [index.html file](https://github.com/juanitacosmica/JC_UFOs) to create more table filters, for: date, city, state, country, and shape (also removed the Filter Table button):
 
-![How it looks in the web app](/Resources/D3_img1.png)
+![Show Html Filters Script](/Resources/D1_img4.png)
 
-![This is the code so we can keep scrapping data in the web app](/Resources/D3_img2.png)
+And using JavaScript, we used a function in the [app.js file](https://github.com/juanitacosmica/JC_UFOs/static/js) to save the element, value, and id of the filter that was changed. Also we created a new function to loop through the dataset to keep only the results that match the user search criteria. The webpage will be updated with the search criteria after pressing "Enter".
 
-All script screenshots results are avaialble for viewing on the [Resources Folder](https://github.com/juanitacosmica/JC_Mission-to-Mars/Resources).
+![Show JavaScript1](/Resources/D1_img5.png)
+![Show JavaScript2](/Resources/D1_img6.png)
+
+All script screenshots results are avaialble for viewing on the [Resources Folder](https://github.com/juanitacosmica/JC_UFOs/Resources).
 
 # Summary:
 
-Imagine how useful this can be, for you instead of going and gather data manually from different websites, this type of script and tools (as shown from D1 to D3) will allow to scrap from data, text to images from different websites! Plus being able to utilize unstructured data types as well, and getting all the results put together in a tailored webapp for the clients to see. A handy method for all time saving fellas.
+Being able to create a webpage to have user inputting parameters to fetch data and visuallize it in tables is a big step forward. For this particular challenge building the HTML using bootstrap and styling and also being able to add an image was very interesting. 2 things to point out:
 
-People call me JC, the short for [Juanita C. Nunez](https://www.linkedin.com/in/juanitacamargonunez/). Contact me for any questions! I love networking, so here you go my [LinkedIn] (https://www.linkedin.com/in/juanitacamargonunez/) :)
+## Drawback:
+
+  1. For the reset button instead of being located up above where the user would not even notice it while being down looking at the filters and table with data, should be under the filtering table; also, the Filter Table Button was quite nicer to have instead of being removed.
+
+## Recommendations:
+
+  1. Having drop-down menus in case the users do not know the options, ie. what if they come to search for UFO data in other countries but this is only fetching for the US? Easier if upfront they see what is available from a drop down menu.
+
+  2. Adding a button for the user to manipulate the styling of the webpage would be fun, this styling was a Dark mode type of view, but having a button to turn it into a lighter mode should be good too!
+
+People call me JC, the short for [Juanita C. Nunez](https://www.linkedin.com/in/juanitacamargonunez/). Contact me for any questions! I love networking, so here you go  my [LinkedIn] (https://www.linkedin.com/in/juanitacamargonunez/) :)
